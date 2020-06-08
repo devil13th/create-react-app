@@ -1,4 +1,4 @@
-import actionTypes from '@/components/redux/ActionTypes'
+import actionTypes from '@/components/compute/ActionTypes'
 // 定义要完成的操作
 
 function plusAction(i) {

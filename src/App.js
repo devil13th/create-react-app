@@ -2,7 +2,7 @@ import React from 'react';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import{BrowserRouter,HashRouter,Switch,Route,Link} from 'react-router-dom'
 import MyParentComponent from '@/components/test/MyParentComponent'
-import Compute from '@/components/redux/Compute'
+import ComputeContainer from '@/components/compute/ComputeContainer'
 import Index from '@/layout/Index'
 class App extends React.Component{
 
@@ -28,7 +28,7 @@ class App extends React.Component{
               <Link to="/component">Component</Link>
             </li>
             <li>
-              <Link to="/compute">Compute</Link>
+              <Link to="/compute">ComputeContainer</Link>
             </li>
           </ul>
         </nav>
@@ -49,7 +49,7 @@ class App extends React.Component{
             <MyComponent/>
           </Route>
           <Route path="/compute">
-            <Compute/>
+            <ComputeContainer/>
           </Route>
           <Route path="/">
             <Home />

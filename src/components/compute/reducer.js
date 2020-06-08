@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux'
-import actionTypes from '@/components/redux/ActionTypes'
+
+import actionTypes from '@/components/compute/ActionTypes'
 
 
 // 过滤待办相关操作
-function compute(state = {i:0}, action) {
+function computeReducer(state = {i:0}, action) {
   console.log('reducer compute() ..............')
   console.log(state);
   switch (action.type) {
@@ -18,8 +18,4 @@ function compute(state = {i:0}, action) {
   }
 }
 
-const appReducer = combineReducers({
-  compute
-});
-
-export default appReducer
+export default computeReducer;
