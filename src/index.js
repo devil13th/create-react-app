@@ -5,6 +5,21 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import store from '@/store'
+
+
+import a  from '@/importTest/user.js';
+import b  from '@/importTest/b.js';
+import c  from '@/importTest/c.js';
+import x  from '@/importTest/user.js';
+import z from '@/importTest/user.js';
+console.log("a",a)
+console.log("b",b)
+console.log("c",c)
+console.log("c",x)
+x.sex='女'
+console.log("b",b)
+console.log("z",z)
+
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

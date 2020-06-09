@@ -4,8 +4,8 @@ import actionTypes from '@/components/compute/ActionTypes'
 
 // 过滤待办相关操作
 function computeReducer(state = {i:0}, action) {
-  console.log('reducer compute() ..............')
-  console.log(state);
+  console.log(" run [computeReducer] reducer");
+  console.log("state:",state);
   switch (action.type) {
     case actionTypes.PLUS:
       // alert("+1")
