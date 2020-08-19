@@ -5,6 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import store from '@/store'
+import 'antd/dist/antd.css';
+import './index.css';
 
 
 import a  from '@/importTest/user.js';
