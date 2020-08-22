@@ -57,24 +57,26 @@ class IndexMenu extends React.Component {
         <div className="logo" />
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
           <Menu.Item key="1" icon={<PieChartOutlined />}>
-            Option 1
-            </Menu.Item>
+            <Link to="/transition">Transation</Link>
+          </Menu.Item>
           <Menu.Item key="2" icon={<DesktopOutlined />}>
             Option 2
             </Menu.Item>
           <SubMenu key="sub1" icon={<ControlOutlined />} title="System Manager">
             <Menu.Item key="3" icon={<UserOutlined />}><Link to="/about">用户管理</Link></Menu.Item>
             <Menu.Item key="5" icon={<TeamOutlined />}><Link to="/users">角色管理</Link></Menu.Item>
-            <Menu.Item key="4" icon={<UnorderedListOutlined />}>菜单管理</Menu.Item>            
+            <Menu.Item key="4" icon={<UnorderedListOutlined />}><Link to="/compute">角色管理</Link></Menu.Item>            
             <SubMenu key="sub1-1" icon={<UserOutlined />} title="User">
               <Menu.Item key="3" >Tom</Menu.Item>
               <Menu.Item key="4">Bill</Menu.Item>
               <Menu.Item key="5">Alex</Menu.Item>
             </SubMenu>
           </SubMenu>
-          <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-            <Menu.Item key="6">Team 1</Menu.Item>
-            <Menu.Item key="8">Team 2</Menu.Item>
+          <SubMenu key="sub2" icon={<TeamOutlined />} title="Transition">
+            <Menu.Item key="6"><Link to="/transition">Transation</Link></Menu.Item>
+            <Menu.Item key="8"><Link to="/cssTransition">CssTransition</Link></Menu.Item>
+            <Menu.Item key="10"><Link to="/transitionGroup">TransitionGroup</Link></Menu.Item>
+            
           </SubMenu>
 
           <Menu.Item key="9" icon={<SettingOutlined />} >[{this.props.state.headerName}]</Menu.Item>
