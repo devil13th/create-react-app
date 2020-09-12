@@ -6,7 +6,8 @@ module.exports = function (app) {
     changeOrigin: true,
     pathRewrite: {
       "^/api": "/"
-    }
+    },
+    'logLevel': 'debug'
   }));
 
   app.use(proxy('/tt', {
@@ -14,7 +15,8 @@ module.exports = function (app) {
     changeOrigin: true,
     pathRewrite: {
       "^/tt": "/"
-    }
+    },
+    'logLevel': 'debug'
   }));
 
 

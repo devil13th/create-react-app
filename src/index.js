@@ -22,6 +22,15 @@ x.sex='女'
 console.log("b",b)
 console.log("z",z)
 
+/*
+window.onpopstate=function(){
+  alert(1)
+}
+
+window.onhashchange=function(){
+  alert(2)
+}
+*/
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
 import { Lifecycle } from 'react-router'
-import{HashRouter,Switch,Route} from 'react-router-dom'
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { HashRouter, Switch, Route } from 'react-router-dom'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -19,6 +20,9 @@ import TodoApp from '@/components/todo/index'
 
 import IndexMenuContainer from '@/layout/containers/IndexMenuContainer';
 import IndexHeaderContainer from '@/layout/containers/IndexHeaderContainer';
+import Transition from '@/components/transition/Transition';
+import CssTransition from '@/components/transition/CssTransition';
+import TransitionGroupExam from '@/components/transition/TransitionGroup';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -40,8 +44,12 @@ function Users() {
 
 
 class IndexLayout extends React.Component {
+  state = {
+    focused: true,
+  }
 
-  xx(obj){
+  xx(nexState,replace) {
+    console.log(nexState,replace)
     alert(1)
   }
 
@@ -60,24 +68,47 @@ class IndexLayout extends React.Component {
             }}
           >
 
-            <HashRouter>
-              <Switch>
-                <Route path="/about" onEnter={this.xx(this)} onLeave={this.xx(this)}>
-                  <About />
-                </Route>
-                <Route path="/users">
-                  <Users />
-                </Route>
+            <HashRouter getUserConfirmation={(message, callback) => {
+    // this is the default behavior
+    alert(1)
+    const allowTransition = window.confirm(message);
+    callback(allowTransition);
+  }}>
+                <TransitionGroup className={'router-wrapper'}>
+    <CSSTransition
+      timeout={200}
+      classNames={'fade'}
+      in={this.state.focused}
+    >
+                  <Switch>
+                    <Route path="/about" onEnter={this.xx} onLeave={this.xx}>
+                      <About />
+                    </Route>
+                    <Route path="/users" onEnter={this.xx} onLeave={this.xx}>
+                      <Users />
+                    </Route>
+                    <Route path="/transition" onEnter={this.xx} onLeave={this.xx}>
+                      <Transition />
+                    </Route>
+                    <Route path="/cssTransition" onEnter={this.xx} onLeave={this.xx}>
+                      <CssTransition />
+                    </Route>
+                    <Route path="/transitionGroup" onEnter={this.xx} onLeave={this.xx}>
+                      <TransitionGroupExam />
+                    </Route>
+                    
+                    
+                    <Route path="/compute">
+                      <ComputeContainer />
+                    </Route>
+                    <Route path="/TodoApp">
+                      <TodoApp />
+                    </Route>
 
-                <Route path="/compute">
-                  <ComputeContainer />
-                </Route>
-                <Route path="/TodoApp">
-                  <TodoApp />
-                </Route>
 
-               
-              </Switch>
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
             </HashRouter>
           </Content>
         </Layout>
