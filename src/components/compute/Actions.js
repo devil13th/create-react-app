@@ -10,5 +10,3 @@ function substractAction(i) {
 }
 
 export default {plusAction,substractAction}
-
-

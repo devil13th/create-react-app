@@ -19,13 +19,13 @@ class App extends React.Component{
     
    
     return (
-      <HashRouter>
+      <BrowserRouter>
       <Switch>
         <Route path="/">
           <IndexLayout></IndexLayout>
         </Route>
       </Switch>
-      </HashRouter>
+      </BrowserRouter>
   
      
     )

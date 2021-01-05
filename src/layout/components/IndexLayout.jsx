@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Menu } from 'antd';
 import { Lifecycle } from 'react-router'
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { HashRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter,HashRouter, Switch, Route } from 'react-router-dom'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -23,7 +23,8 @@ import IndexHeaderContainer from '@/layout/containers/IndexHeaderContainer';
 import Transition from '@/components/transition/Transition';
 import CssTransition from '@/components/transition/CssTransition';
 import TransitionGroupExam from '@/components/transition/TransitionGroup';
-
+import About from '@/components/about/About';
+import Users from '@/components/users/Users';
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -33,13 +34,13 @@ function Home() {
   return <h2>Home</h2>;
 }
 
-function About() {
-  return <h2>About</h2>;
-}
+// function About() {
+//   return <h2>About</h2>;
+// }
 
-function Users() {
-  return <h2>Users</h2>;
-}
+// function Users() {
+//   return <h2>Users</h2>;
+// }
 
 
 
@@ -68,12 +69,6 @@ class IndexLayout extends React.Component {
             }}
           >
 
-            <HashRouter getUserConfirmation={(message, callback) => {
-    // this is the default behavior
-    alert(1)
-    const allowTransition = window.confirm(message);
-    callback(allowTransition);
-  }}>
                 <TransitionGroup className={'router-wrapper'}>
     <CSSTransition
       timeout={200}
@@ -109,7 +104,7 @@ class IndexLayout extends React.Component {
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>
-            </HashRouter>
+            
           </Content>
         </Layout>
       </Layout>
