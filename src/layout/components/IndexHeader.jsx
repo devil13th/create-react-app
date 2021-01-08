@@ -21,11 +21,11 @@ class IndexHeader extends React.Component {
   }
   render() {
     return (
-      <Header className="site-layout-background" style={{ padding: 0 }}>
+      <Header className="site-layout-background" style={{ padding: 0 ,textAlign:'left' }}>
          {React.createElement(this.props.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: 'trigger',
               onClick: this.props.toggle,
-            })} 
+            })}  
       </Header>
     )
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { CSSTransition } from 'react-transition-group';
-import './cssTransition.css';
+import { CSSTransition } from 'react-transition-group'
+import './cssTransition.css'
 /**
  * ** classNames 
     用在CSSTransition标签上面，自动添加状态后缀名
@@ -48,16 +48,16 @@ import './cssTransition.css';
         }
  */
 const defaultStyle = {
-  width: "100px",
-  height: "100px",
-  background: "red"
+  width: '100px',
+  height: '100px',
+  background: 'red',
 }
 
 class CssTransation extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      in: true
+      in: true,
     }
   }
   toggleEnterState = () => {
@@ -66,11 +66,17 @@ class CssTransation extends React.Component {
   render() {
     return (
       <div>
-        <CSSTransition in={this.state.in} timeout={500} classNames='bounceInLeft'>
+        <CSSTransition
+          in={this.state.in}
+          timeout={500}
+          classNames="bounceInLeft"
+        >
           {(state) => (
-            <div style={{
-              ...defaultStyle
-            }}>
+            <div
+              style={{
+                ...defaultStyle,
+              }}
+            >
               I'm A fade Transition!
             </div>
           )}
@@ -81,8 +87,4 @@ class CssTransation extends React.Component {
   }
 }
 
-
-export default CssTransation; 
-
-
-
+export default CssTransation
